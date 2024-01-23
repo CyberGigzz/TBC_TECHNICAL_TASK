@@ -17,4 +17,103 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  box-sizing: border-box;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.header {
+  background-color: #1a1e1f;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2rem;
+  display: flex;
+}
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  max-width: 60rem;
+  display: flex;
+}
+
+.header > nav {
+  font-size: 1.6rem;
+}
+
+.flex {
+  align-items: center;
+  gap: 3rem;
+  display: flex;
+}
+
+.header_img {
+  cursor: pointer;
+  width: 15rem;
+  height: 5rem;
+}
+
+.list {
+  color: #fff;
+  cursor: pointer;
+  background-color: #0000;
+  border: none;
+  font-size: 1.6rem;
+  transition: color .5s;
+}
+
+.active, .list:hover {
+  color: #00a3e0;
+}
+
+.logo {
+  margin: 2rem;
+}
+
+.primary-navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > [aria-hidden="true"] {
+  margin-inline-end: .75em;
+}
+
+@media (width <= 90rem) {
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+}
+
+.checkbtn {
+  color: #fff;
+  float: right;
+  cursor: pointer;
+  margin-right: 8rem;
+  font-size: 3rem;
+  display: none;
+}
+
+@media (width <= 800px) {
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+
+  .checkbtn {
+    display: block;
+  }
+}
+
+#check {
+  display: none;
+}
+
 /*# sourceMappingURL=index.34df27b5.css.map */

@@ -588,10 +588,8 @@ function createMain() {
 }
 function initializeWebsite() {
     const content = document.getElementById("content");
-    const mainElement = createMain();
-    const headerElement = (0, _header.createHeader)();
-    mainElement.appendChild(headerElement);
-    content.appendChild(mainElement);
+    content.appendChild((0, _header.createHeader)());
+    content.appendChild(createMain());
 }
 initializeWebsite();
 
@@ -599,42 +597,81 @@ initializeWebsite();
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createHeader", ()=>createHeader);
+var _833PxTBCBankLogoSvgPng = require("../assets/833px-TBC_Bank_logo.svg.png");
+var _833PxTBCBankLogoSvgPngDefault = parcelHelpers.interopDefault(_833PxTBCBankLogoSvgPng);
 function createNav() {
     const nav = document.createElement("nav");
-    //First
-    const homeButton = document.createElement("button");
-    homeButton.classList.add("button-nav");
-    homeButton.textContent = "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8";
-    //TBC IT
-    const menuButton = document.createElement("button");
-    menuButton.classList.add("button-nav");
-    menuButton.textContent = "TBC IT";
-    //TBC x USAID
-    const contactButton = document.createElement("button");
-    contactButton.classList.add("button-nav");
-    contactButton.textContent = "TBC x USAID";
-    //risks
-    const risks = document.createElement("button");
-    risks.classList.add("button-nav");
-    risks.textContent = "\u10E0\u10D8\u10E1\u10D9\u10D4\u10D1\u10D8";
-    nav.appendChild(homeButton);
-    nav.appendChild(menuButton);
-    nav.appendChild(contactButton);
-    nav.appendChild(risks);
+    const ul = document.createElement("ul");
+    // nav.classList.add("flex")
+    // Add id and class to the ul element
+    ul.id = "primary-navigation";
+    ul.classList.add("flex");
+    const buttonNames = [
+        "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8",
+        "TBC IT",
+        "TBC x USAID",
+        "\u10E0\u10D8\u10E1\u10D9\u10D4\u10D1\u10D8"
+    ];
+    const buttonClasses = [
+        "button-nav",
+        "button-nav",
+        "button-nav button-nav_active",
+        "button-nav"
+    ];
+    for(let i = 0; i < buttonNames.length; i++){
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        const span = document.createElement("span");
+        span.textContent = buttonNames[i];
+        a.classList = buttonClasses[i];
+        // Add aria-hidden="true" to the span element
+        span.setAttribute("aria-hidden", "true");
+        a.appendChild(span);
+        li.appendChild(a);
+        // Add active class to all li elements
+        li.classList.add("list");
+        // Add an additional active class to the third li element
+        if (i === 2) li.classList.add("active");
+        // Add list class to all li elements
+        li.classList.add("list");
+        ul.appendChild(li);
+    }
+    // Add input with type checkbox and ID check
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = "check";
+    nav.appendChild(input);
+    // Add label with for=check class=checkbtn
+    const label = document.createElement("label");
+    label.htmlFor = "check";
+    label.classList.add("checkbtn");
+    // In that label add i with class= fas fa-bars
+    const i = document.createElement("i");
+    i.classList.add("fas", "fa-bars");
+    label.appendChild(i);
+    nav.appendChild(label);
+    nav.appendChild(ul);
     return nav;
 }
 function createHeader() {
     const header = document.createElement("header");
     header.classList.add("header");
-    const restaurantName = document.createElement("h1");
-    restaurantName.classList.add("restaurant_name");
-    restaurantName.textContent = "Khachapuri House";
-    header.appendChild(restaurantName);
-    header.appendChild(createNav());
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper");
+    const logoDiv = document.createElement("div");
+    logoDiv.classList.add("logo");
+    const logoImage = document.createElement("img");
+    logoImage.classList.add("header_img");
+    logoImage.src = "TBC"; // Assuming TBC is a string path to your image
+    logoImage.alt = "Logo Image";
+    logoDiv.appendChild(logoImage);
+    wrapper.appendChild(logoDiv);
+    wrapper.appendChild(createNav()); // Assuming createNav() is a function that creates a navigation bar
+    header.appendChild(wrapper);
     return header;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../assets/833px-TBC_Bank_logo.svg.png":"j6MjP"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -663,6 +700,44 @@ exports.export = function(dest, destName, get) {
         get: get
     });
 };
+
+},{}],"j6MjP":[function(require,module,exports) {
+module.exports = require("49102d184b953917").getBundleURL("10Mjw") + "833px-TBC_Bank_logo.svg.ed5faba9.png" + "?" + Date.now();
+
+},{"49102d184b953917":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
 
 },{}]},["iqNlW","1SICI"], "1SICI", "parcelRequire58cb")
 

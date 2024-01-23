@@ -6,15 +6,12 @@ function createMain() {
   main.setAttribute("id", "main");
   return main;
 }
-
+  
 function initializeWebsite() {
   const content = document.getElementById("content");
 
-  const mainElement = createMain();
-  const headerElement = createHeader();
-
-  mainElement.appendChild(headerElement);
-  content.appendChild(mainElement);
+  content.appendChild(createHeader());
+  content.appendChild(createMain());
 }
 
 initializeWebsite();
