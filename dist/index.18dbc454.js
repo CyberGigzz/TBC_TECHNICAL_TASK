@@ -594,16 +594,16 @@ function initializeWebsite() {
 initializeWebsite();
 
 },{"./header":"bvS82"}],"bvS82":[function(require,module,exports) {
+// import TBC from "../assets/833px-TBC_Bank_logo.svg.png";
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createHeader", ()=>createHeader);
-var _833PxTBCBankLogoSvgPng = require("../assets/833px-TBC_Bank_logo.svg.png");
-var _833PxTBCBankLogoSvgPngDefault = parcelHelpers.interopDefault(_833PxTBCBankLogoSvgPng);
+var _screenshotPng = require("../assets/screenshot.png");
+var _screenshotPngDefault = parcelHelpers.interopDefault(_screenshotPng);
+// Screenshot from 2024-01-24 22-23-57
 function createNav() {
     const nav = document.createElement("nav");
     const ul = document.createElement("ul");
-    // nav.classList.add("flex")
-    // Add id and class to the ul element
     ul.id = "primary-navigation";
     ul.classList.add("flex");
     const buttonNames = [
@@ -662,16 +662,16 @@ function createHeader() {
     logoDiv.classList.add("logo");
     const logoImage = document.createElement("img");
     logoImage.classList.add("header_img");
-    logoImage.src = "TBC"; // Assuming TBC is a string path to your image
+    logoImage.src = (0, _screenshotPngDefault.default);
     logoImage.alt = "Logo Image";
     logoDiv.appendChild(logoImage);
     wrapper.appendChild(logoDiv);
-    wrapper.appendChild(createNav()); // Assuming createNav() is a function that creates a navigation bar
+    wrapper.appendChild(createNav());
     header.appendChild(wrapper);
     return header;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../assets/833px-TBC_Bank_logo.svg.png":"j6MjP"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../assets/screenshot.png":"6GEOZ"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -701,10 +701,10 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"j6MjP":[function(require,module,exports) {
-module.exports = require("49102d184b953917").getBundleURL("10Mjw") + "833px-TBC_Bank_logo.svg.ed5faba9.png" + "?" + Date.now();
+},{}],"6GEOZ":[function(require,module,exports) {
+module.exports = require("b47cd73687f4c5f1").getBundleURL("10Mjw") + "screenshot.76ec8f8a.png" + "?" + Date.now();
 
-},{"49102d184b953917":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+},{"b47cd73687f4c5f1":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {

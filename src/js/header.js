@@ -1,11 +1,13 @@
-import TBC from "../assets/833px-TBC_Bank_logo.svg.png";
+// import TBC from "../assets/833px-TBC_Bank_logo.svg.png";
+
+import TBC from "../assets/screenshot.png";
+
+// Screenshot from 2024-01-24 22-23-57
 
 function createNav() {
   const nav = document.createElement("nav");
   const ul = document.createElement("ul");
-  // nav.classList.add("flex")
 
-  // Add id and class to the ul element
   ul.id = "primary-navigation";
   ul.classList.add("flex");
 
@@ -79,13 +81,13 @@ export function createHeader() {
   const logoImage = document.createElement("img");
   logoImage.classList.add("header_img");
 
-  logoImage.src = "TBC"; // Assuming TBC is a string path to your image
+  logoImage.src = TBC;
   logoImage.alt = "Logo Image";
 
   logoDiv.appendChild(logoImage);
 
   wrapper.appendChild(logoDiv);
-  wrapper.appendChild(createNav()); // Assuming createNav() is a function that creates a navigation bar
+  wrapper.appendChild(createNav());
 
   header.appendChild(wrapper);
 
